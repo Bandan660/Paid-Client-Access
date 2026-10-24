@@ -1,0 +1,11 @@
+{
+  "name": "paid-client-access",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "npm run dev:server",
+    "retry-crm-sync": "npm run retry-crm-sync --prefix server"
+  }
+}
