@@ -213,14 +213,6 @@ To test that duplicate events do not create multiple entitlements or duplicate C
      ```
    - Status updates immediately to `Synced`!
 
----
 
-## 15-Minute Walkthrough Demonstration Script
 
-| Time | Topic | Demonstration |
-| :--- | :--- | :--- |
-| **0:00 - 3:00** | Architecture & Security Overview | Explain the React + Node Express + Supabase split. Show that client bundle contains only public anon keys, while Stripe and Zoho secrets are isolated on the server. |
-| **3:00 - 6:00** | Multi-Tenant Isolation (RLS) | Log in as Client A (`client_a@enterprise.com`). Show that Client B's data is completely hidden via Supabase RLS. |
-| **6:00 - 9:00** | Purchase Flow & Stable IDs | Initiate checkout. Inspect Stripe Session metadata containing stable `user_id`, `document_id`, and `zoho_deal_id`. Show webhook signature verification and entitlement grant. |
-| **9:00 - 12:00** | Idempotency Verification | Trigger Stripe CLI `stripe events resend <event_id>`. Show server log acknowledging the event idempotently without duplicate records. |
-| **12:00 - 15:00** | Zoho Outage & Retry | Toggle `SIMULATE_ZOHO_FAILURE=true`. Show document unlocking even while Zoho fails. Show diagnostic error in portal. Run `npm run retry-crm-sync` (or click retry in UI) to demonstrate self-healing sync. |
+
